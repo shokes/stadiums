@@ -36,14 +36,23 @@
 
 .btn {
   color: #000;
+  cursor: pointer;
 
   padding: 0.5rem 1rem;
 
   border-color: #20b2aa;
-  background-color: none;
+  background: none;
   margin-bottom: 1rem;
 }
 
 .button-center {
   text-align: center;
+}
+
+.link {
+  color: #20b2aa;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 1rem;
 }

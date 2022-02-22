@@ -1,26 +1,22 @@
 import "./App.css";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import data from "./data";
 import Stadiums from "./stadiums";
 
 function App() {
-  const [loading, setLoading] = useState(true);
   const [stadium, setStadium] = useState(data);
 
-  if (loading) {
-    return (
-      <div>
-        <h1>Visit These Stadiums For Free</h1>
-        <Stadiums stadium={stadium} />
-      </div>
-    );
-  }
+  const removeStadium = function (id) {
+    const newStadium = stadium.filter((stadi) => stadi.id !== id);
+    setStadium(newStadium);
+  };
 
   return (
-    <main>
-      <h2>an error occured</h2>
-    </main>
+    <div>
+      <h1>Visit These Stadiums For Free</h1>
+      <Stadiums stadium={stadium} removeStadium={removeStadium} />
+    </div>
   );
 }
 

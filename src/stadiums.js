@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Stadiums = function ({ stadium }) {
+const Stadiums = function ({ stadium, removeStadium }) {
   const [readMore, setReadMore] = useState(false);
 
   return (
@@ -32,7 +32,15 @@ const Stadiums = function ({ stadium }) {
               </p>
 
               <div className="button-center">
-                <button className="btn">Remove</button>
+                <button
+                  className="btn"
+                  onClick={() => {
+                    removeStadium(id);
+                  }}
+                >
+                  {" "}
+                  Remove
+                </button>
               </div>
             </footer>
           </article>
